@@ -4,3 +4,8 @@ def sign_in_and_play
   fill_in :player_2_name, with: "Bar"
   click_button 'Submit'
 end
+
+def attack_ok
+  click_button "Attack"
+  click_button "OK"
+end

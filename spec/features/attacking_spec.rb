@@ -6,8 +6,7 @@ feature 'Attacking' do
   end
   scenario 'lowers Player 2 hit points by 10' do
     sign_in_and_play
-    click_button "Attack"
-    click_button "OK"
+    attack_ok
     expect(page).not_to have_content "Bar: 60 HPs"
     expect(page).to have_content "Bar: 50 HPs"
   end

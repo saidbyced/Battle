@@ -18,7 +18,6 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    # use session stored names for players names
     @game = $game
     erb :play
   end
