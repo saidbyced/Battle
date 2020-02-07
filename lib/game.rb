@@ -1,11 +1,16 @@
 class Game
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
-    @turn = 1
+    @current_turn = 1
   end
 
   def attack(player)
     player.receive_damage
+    if @current_turn >= @players.count
+      @current_turn = 1
+    else
+      @current_turn += 1
+    end
   end
 
   def player(number)
@@ -13,7 +18,7 @@ class Game
   end
 
   def turn
-    "#{player(1).name}'s turn!'"
+    "#{player(@current_turn).name}'s turn"
   end
 
 end
